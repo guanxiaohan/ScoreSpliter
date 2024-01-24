@@ -51,7 +51,7 @@ class MainWizard(QWizard):
             self.setLayout(self.Layout)
             self.setAcceptDrops(True)
             self.setTitle("选择表格文件")
-            self.setSubTitle("输入要拆分的单个表格文件的路径, 或者直接将这个文件拖入地址栏中.")
+            self.setSubTitle("输入要拆分的单个表格文件的路径, 或者直接将这个文件拖入地址栏中. 这个文件必须是以.xlsx结尾的.")
 
         def isComplete(self) -> bool:
             return os.path.exists(self.field("directory")) and os.path.isfile(self.field("directory")) and self.field("directory").endswith(".xlsx")
